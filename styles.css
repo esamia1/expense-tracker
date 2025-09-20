@@ -1,0 +1,322 @@
+/* General Styles */
+:root {
+    --card-background: #FFFFFF; 
+    --main-background: #f3f3f3;
+    --screen-background: #F6F4F0;    
+    --background-shade1: #E2E2E2;    
+    /* --active-main-color: #262626; /* #333333 #262626 */ 
+    --active-text: #1A1A1A;
+    --note-text: #2e2e2e;
+    --inactive-text: #7e7e7e;
+    --border-black-shade: #B5B5B5;
+    --border2-black-shade: #DADADA;
+    /* --shade-color: #515151; /* #3c3c3c #676767 #7d7d7d */
+    --income-color: #5C98FF; /* #2196f3 #1565c0 #2962ff #1976d2 */
+    --expense-color: #FD6255; /* #ff5f5f #ff7171 #e64545 */
+    --heading-background: #EF764F;
+    --top-fixed-height: 21.5%;
+    --general-space: 4px 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--inactive-text);
+    background-color: #212426;
+    font-family: Roboto, Arial, sans-serif;    
+}
+
+.wrapper {
+    width: 480px;
+    height: 100vh;
+    margin-right: auto;
+    margin-left: auto;    
+    overflow-y: hidden;
+    background-color: var(--main-background);    
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* Common And Targetted Styles */
+.income-color {
+    color: var(--income-color);
+}
+
+.expense-color {
+    color: var(--expense-color);
+}
+
+.active-item {
+    color: var(--expense-color);
+}
+
+.active-nav {
+    color: var(--active-text);
+    border-bottom: 3px solid var(--expense-color);
+}
+
+.note {
+    color: var(--note-text);
+}
+
+.some-space {
+    padding: var(--general-space);
+}
+
+
+/* Top Navigation Styles */
+.container-top {
+    height: var(--top-fixed-height);
+}
+
+.heading {
+    color: var(--card-background);
+    width: 100%;
+    text-align: center;
+    background-color: var(--heading-background);
+}
+
+#date-text, #time-text {
+    margin-top: 4px;
+    font-weight: 300;
+}
+
+.top-navigation {
+    width: 100%;
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border2-black-shade);    
+}
+
+.nav-common {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.date-nav {
+    color: var(--active-text);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.date-nav > button:first-child, .date-nav > div:nth-child(2) {
+    margin-right: 8px;
+}
+
+.date-nav button {
+    color: var(--inactive-text);
+    border: none;
+    background-color: var(--card-background);    
+}
+
+.date-nav button:hover {
+    color: var(--active-text);
+}
+
+.summary-type > div {
+    cursor: pointer;
+    padding: var(--general-space);
+    font-weight: 500;     
+}
+
+.month-summary {
+    background-color: var(--card-background);
+    font-weight: 400;
+    color: var(--note-text);
+    border-bottom: 1px solid var(--border2-black-shade);
+}
+
+.total {
+    color: var(--active-text);
+}
+
+
+/* Content Body Styles */
+.container-bottom {
+    width: 100%;
+    height: calc(100vh - var(--top-fixed-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-body {
+    overflow-y: auto;
+}
+
+.card {
+    width: 100%;
+    margin-top: 8px;
+    background-color: var(--card-background);
+    font-weight: 400;
+}
+
+.card:first-child {
+    margin-top: 0;
+}
+
+.trans-head {
+    width: 100%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border2-black-shade);
+    border-bottom: 1px solid var(--border2-black-shade);
+    padding: 4px 8px;
+}
+
+.card:first-child > .trans-head {
+    border-top: 0;
+}
+
+.trans-entry {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.trans-entry > div:nth-child(odd) {
+    width: 25%;
+}
+
+.trans-entry > div:nth-child(even) {
+    width: 50%;
+}
+
+.trans-entry > div:last-child {
+    text-align: right;
+}
+
+.card-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-date > div {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.day {
+    color: var(--active-text);
+    font-weight: 700;
+    font-size: 24px;       
+}
+
+.week-day {
+    color: var(--card-background);
+    background-color: var(--inactive-text);
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 11px;
+    margin-right: 4px;
+    margin-left: 4px;           
+}
+
+.d-period{
+    font-size: 14px;
+}
+
+.description {
+    text-align: left;
+}
+
+/*
+.description > div:first-child {
+    font-weight: 300;
+}
+*/
+
+/* Bottom Navigation Styles */
+.content-footer {
+    position: relative;
+}
+.add-transaction {
+    position: absolute;
+    bottom: 80px;
+    right: 8px;
+    z-index: 9999;
+}
+
+.add-transaction button {
+    color: var(--card-background);
+    background-color: var(--expense-color);
+    padding: 14px;
+    border-radius: 50%;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.bottom-view > div {
+    cursor: pointer;
+    text-align: center;
+}
+
+.trans i, .stats i, .accounts i {
+    font-size: 24px;   
+}
+
+
+/* Add Transaction Styles */
+.add-entry {
+    width: 100%;
+    font-size: 18px;
+    background-color: var(--card-background);    
+}
+
+.add-entry button {
+    border: none;
+}
+
+.add-entry > div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    color: var(--active-text);    
+}
+
+.add-entry button:nth-of-type(1) {
+    margin-right: 8px;
+    background-color: transparent;
+    padding: 4px 8px 4px 0;
+    color: var(--inactive-text);    
+}
+
+.add-entry button:nth-of-type(1):hover {
+    color: var(--active-text);
+}
+
+
+.add-entry > div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.add-entry span {
+    border: 2px solid var(--border2-black-shade);
+    background-color: var(--main-background);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.add-entry span:nth-child(2) {
+    color: var(--expense-color);
+    background-color: transparent;
+    border: 2px solid var(--expense-color);
+}
