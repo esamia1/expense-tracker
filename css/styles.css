@@ -1,4 +1,4 @@
-/* General Styles */
+/* Base Fixed Styles */
 :root {
     --card-background: #FFFFFF; 
     --main-background: #f3f3f3;
@@ -13,34 +13,17 @@
     /* --shade-color: #515151; /* #3c3c3c #676767 #7d7d7d */
     --income-color: #5C98FF; /* #2196f3 #1565c0 #2962ff #1976d2 */
     --expense-color: #FD6255; /* #ff5f5f #ff7171 #e64545 */
-    --heading-background: #EF764F;
-    --top-fixed-height: 21.5%;
+    --heading-background: #EF764F;   
     --general-space: 4px 8px;
+    --top-fixed-height: 14%;
 }
 
+
+/* Universal Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    color: var(--inactive-text);
-    background-color: #212426;
-    font-family: Roboto, Arial, sans-serif;    
-}
-
-.wrapper {
-    width: 480px;
-    height: 100vh;
-    margin-right: auto;
-    margin-left: auto;    
-    overflow-y: hidden;
-    background-color: var(--main-background);    
-}
-
-button {
-    cursor: pointer;
 }
 
 
@@ -70,10 +53,39 @@ button {
     padding: var(--general-space);
 }
 
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+/* General Body Styles */
+body {
+    color: var(--inactive-text);
+    background-color: #212426;
+    font-family: Roboto, Arial, sans-serif;    
+}
+
+.wrapper {
+    position: relative;
+    width: 720px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: hidden;  
+    background-color: var(--main-background);
+}
+
 
 /* Top Navigation Styles */
-.container-top {
+.header {
     height: var(--top-fixed-height);
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border2-black-shade);
 }
 
 .heading {
@@ -88,66 +100,81 @@ button {
     font-weight: 300;
 }
 
-.top-navigation {
-    width: 100%;
-    background-color: var(--card-background);
-    border-bottom: 1px solid var(--border2-black-shade);    
+#time-text {
+    margin-bottom: 4px;
 }
 
-.nav-common {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.date-nav {
+.month-nav {
     color: var(--active-text);
+    width: 100%;
+    text-align: center;
+    background-color: var(--card-background);
+    margin-top: 4px;
     font-size: 18px;
-    font-weight: 500;
 }
 
-.date-nav > button:first-child, .date-nav > div:nth-child(2) {
+.month-nav span {
+    margin-left: 8px;
     margin-right: 8px;
 }
 
-.date-nav button {
-    color: var(--inactive-text);
-    border: none;
-    background-color: var(--card-background);    
-}
-
-.date-nav button:hover {
-    color: var(--active-text);
-}
-
-.summary-type > div {
-    cursor: pointer;
-    padding: var(--general-space);
-    font-weight: 500;     
-}
-
-.month-summary {
-    background-color: var(--card-background);
-    font-weight: 400;
-    color: var(--note-text);
-    border-bottom: 1px solid var(--border2-black-shade);
-}
-
-.total {
-    color: var(--active-text);
+.month-nav button {
+    padding: 5px;
 }
 
 
-/* Content Body Styles */
-.container-bottom {
+/* Main Section Styles */
+.main-section {
     width: 100%;
     height: calc(100vh - var(--top-fixed-height));
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
 }
 
-.content-body {
+
+/* Nav Section Styles */
+.nav-section {
+    width: 120px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+/* Content Section Styles */
+.content-section {
+    width: calc(100% - 120px);
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.daily-summary {
+    color: var(--note-text);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border2-black-shade);
+    padding: var(--general-space);
+    font-weight: 400;
+}
+
+.income p:last-child {
+    color: var(--income-color);
+}
+
+.expense p:last-child {
+    color: var(--expense-color);
+}
+
+.aggregate p:last-child {
+    color: var(--active-text);
+}
+
+.transactions {
     overflow-y: auto;
 }
 
@@ -235,88 +262,17 @@ button {
     text-align: left;
 }
 
-/*
-.description > div:first-child {
-    font-weight: 300;
-}
-*/
-
-/* Bottom Navigation Styles */
-.content-footer {
-    position: relative;
-}
 .add-transaction {
-    position: absolute;
-    bottom: 80px;
-    right: 8px;
-    z-index: 9999;
-}
-
-.add-transaction button {
     color: var(--card-background);
     background-color: var(--expense-color);
-    padding: 14px;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 32px;
+    padding: 4px 14px;
     border-radius: 50%;
-    border: none;
-    font-weight: 700;
-    font-size: 18px;
 }
 
-.bottom-view > div {
-    cursor: pointer;
-    text-align: center;
-}
-
-.trans i, .stats i, .accounts i {
-    font-size: 24px;   
-}
-
-
-/* Add Transaction Styles */
-.add-entry {
-    width: 100%;
-    font-size: 18px;
-    background-color: var(--card-background);    
-}
-
-.add-entry button {
-    border: none;
-}
-
-.add-entry > div:nth-child(1) {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    color: var(--active-text);    
-}
-
-.add-entry button:nth-of-type(1) {
-    margin-right: 8px;
-    background-color: transparent;
-    padding: 4px 8px 4px 0;
-    color: var(--inactive-text);    
-}
-
-.add-entry button:nth-of-type(1):hover {
-    color: var(--active-text);
-}
-
-
-.add-entry > div:nth-child(2) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.add-entry span {
-    border: 2px solid var(--border2-black-shade);
-    background-color: var(--main-background);
-    padding: 4px 12px;
-    border-radius: 4px;
-}
-
-.add-entry span:nth-child(2) {
-    color: var(--expense-color);
-    background-color: transparent;
-    border: 2px solid var(--expense-color);
+.add-transaction:hover {
+    box-shadow: 2px 5px 8px var(--inactive-text);
 }

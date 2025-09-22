@@ -1,211 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker App</title>
     <link rel="icon" href="./favicon.png" type="image/png">
+    <!-- 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../fontawesome/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    -->
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <section>
         <div class="wrapper">
-            <div class="container-top">
+            <div class="header">
                 <div class="heading some-space">
                     <h2 id="head-description">Expense Tracker</h2>
                     <p id="date-text"></p>
                     <p id="time-text"></p>
                 </div>
-            
-                <div class="top-navigation">
-                    <div class="nav-common some-space">
-                        <div class="date-nav nav-common">
-                            <button><i class="fa-solid fa-chevron-left"></i></button>
-                            <div>Jul 2025</div>
-                            <button><i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
-                        <div class="search-nav">
-                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
-                    <div class="summary-type nav-common">
-                        <div class="active-nav">Daily</div>
-                        <div>Calendar</div>
-                        <div>Monthly</div>
-                        <div>Total</div>
-                    </div>
-                </div>
-            
-                <div class="month-summary nav-common some-space">
-                    <div>
-                        <div class="note">Income</div>
-                        <div class="income-color">28,469.00</div>
-                    </div>
-                    <div>
-                        <div class="note">Expenses</div>
-                        <div class="expense-color">2,700.00</div>
-                    </div>
-                    <div>
-                        <div class="note">Total</div>
-                        <div class="total">25,769.00</div>
-                    </div>
+                <div class="month-nav">
+                    <button>👈🏿</button>
+                    <span>Jul 2025</span>
+                    <button>👉🏿</button>
                 </div>
             </div>
+            <div class="main-section">
+                <div class="nav-section">                
+                    <a href="#">Trans.</a>
+                    <a href="#">Stats</a>
+                    <a href="#">Accounts</a>                
+                </div>
+                <div class="content-section">
+                    <div class="daily-summary">
+                        <div class="income">
+                            <p>Income</p>
+                            <p>28,619.00</p>
+                        </div>
+                        <div class="expense">
+                            <p>Expenses</p>
+                            <p>2,782.00</p>
+                        </div>
+                        <div class="aggregate">
+                            <p>Total</p>
+                            <p>25,837.00</p>
+                        </div>
+                    </div>
+                    <div class="transactions">
+                        <div class="card">
+                            <div class="trans-head">
+                                <div class="card-date">
+                                    <div class="day">24</div>
+                                    <div class="week-day">Thu</div>
+                                    <div class="d-period">07.2025</div>
+                                </div>
+                                <div class="income-color">Kshs 0.00</div>
+                                <div class="expense-color">Kshs 200.00</div>
+                            </div>
+                            <div class="trans-entry transfer some-space">
+                                <div>Transfer</div>
+                                <div class="description">
+                                    <div class="note">bank to Mobile</div>
+                                    <div>Account to MPESA</div>
+                                </div>
+                                <div>Kshs 5,000.00</div>
+                            </div>
+                            <div class="trans-entry expense some-space">
+                                <div>Social Life</div>
+                                <div class="description">
+                                    <div class="note">Movie</div>
+                                    <div>Accounts</div>
+                                </div>
+                                <div>Kshs 200.00</div>
+                            </div>
+                            <div class="trans-entry income some-space">
+                                <div>Bonus</div>
+                                <div class="description">
+                                    <div class="note">Removed</div>
+                                    <div>Card</div>
+                                </div>
+                                <div>Kshs 2,369.00</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="trans-head">
+                                <div class="card-date">
+                                    <div class="day">21</div>
+                                    <div class="week-day">Fri</div>
+                                    <div class="d-period">07.2025</div>
+                                </div>
+                                <div class="income-color">Kshs 8,469.00</div>
+                                <div class="expense-color">Kshs 2,500.00</div>
+                            </div>
+                            <div class="trans-entry expense some-space">
+                                <div>Household</div>
+                                <div class="description">
+                                    <div class="note">Removed</div>
+                                    <div>MPESA</div>
+                                </div>
+                                <div>Kshs 2,500.00</div>
+                            </div>
+                            <div class="trans-entry income some-space">
+                                <div>Allowance</div>
+                                <div class="description">
+                                    <div class="note">Gffjj</div>
+                                    <div>BankApp</div>
+                                </div>
+                                <div>Kshs 5,600.00</div>
+                            </div>
+                            <div class="trans-entry income some-space">
+                                <div>Salary</div>
+                                <div class="description">
+                                    <div class="note">Mpesa</div>
+                                    <div>MPESA</div>
+                                </div>
+                                <div>Kshs 500.00</div>
+                            </div>
+                            <div class="trans-entry transfer some-space">
+                                <div>Transfer</div>
+                                <div class="description">
+                                    <div class="note">bank to Mobile</div>
+                                    <div>Account to MPESA</div>
+                                </div>
+                                <div>Kshs 5,000.00</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="trans-head">
+                                <div class="card-date">
+                                    <div class="day">19</div>
+                                    <div class="week-day">Mon</div>
+                                    <div class="d-period">07.2025</div>
+                                </div>
+                                <div class="income-color">Kshs 8,469.00</div>
+                                <div class="expense-color">Kshs 2,500.00</div>
+                            </div>
 
-            <div class="container-bottom">
-                <div id="content" class="content-body">
-                    <div class="card">
-                        <div class="trans-head">
-                            <div class="card-date">
-                                <div class="day">24</div>
-                                <div class="week-day">Thu</div>
-                                <div class="d-period">07.2025</div>
+                            <div class="trans-entry expense some-space">
+                                <div>Household</div>
+                                <div class="description">
+                                    <div class="note">Removed</div>
+                                    <div>MPESA</div>
+                                </div>
+                                <div>Kshs 2,500.00</div>
                             </div>
-                            <div class="income-color">Kshs 0.00</div>
-                            <div class="expense-color">Kshs 200.00</div>
-                        </div>
-                        <div class="trans-entry transfer some-space">
-                            <div>Transfer</div>
-                            <div class="description">
-                                <div class="note">bank to Mobile</div>
-                                <div>Account to MPESA</div>
+                            <div class="trans-entry income some-space">
+                                <div>Allowance</div>
+                                <div class="description">
+                                    <div class="note">Gffjj</div>
+                                    <div>BankApp</div>
+                                </div>
+                                <div>Kshs 5,600.00</div>
                             </div>
-                            <div>Kshs 5,000.00</div>
-                        </div>
-                        <div class="trans-entry expense some-space">
-                            <div>Social Life</div>
-                            <div class="description">
-                                <div class="note">Movie</div>
-                                <div>Accounts</div>
+                            <div class="trans-entry income some-space">
+                                <div>Salary</div>
+                                <div class="description">
+                                    <div class="note">Mpesa</div>
+                                    <div>MPESA</div>
+                                </div>
+                                <div>Kshs 500.00</div>
                             </div>
-                            <div>Kshs 200.00</div>
-                        </div>
-                        <div class="trans-entry income some-space">
-                            <div>Bonus</div>
-                            <div class="description">
-                                <div class="note">Removed</div>
-                                <div>Card</div>
-                            </div>
-                            <div>Kshs 2,369.00</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="trans-head">
-                            <div class="card-date">
-                                <div class="day">21</div>
-                                <div class="week-day">Fri</div>
-                                <div class="d-period">07.2025</div>             
-                            </div>             
-                            <div class="income-color">Kshs 8,469.00</div>
-                            <div class="expense-color">Kshs 2,500.00</div>              
-                        </div>
-                        
-                        <div class="trans-entry expense some-space">
-                            <div>Household</div>
-                            <div class="description">
-                                <div class="note">Removed</div>
-                                <div>MPESA</div>
-                            </div>
-                            <div>Kshs 2,500.00</div>
-                        </div>
-                        <div class="trans-entry income some-space">
-                            <div>Allowance</div>
-                            <div class="description">
-                                <div class="note">Gffjj</div>
-                                <div>BankApp</div>
-                            </div>
-                            <div>Kshs 5,600.00</div>
-                        </div>
-                        <div class="trans-entry income some-space">
-                            <div>Salary</div>
-                            <div class="description">
-                                <div class="note">Mpesa</div>
-                                <div>MPESA</div>
-                            </div>
-                            <div>Kshs 500.00</div>
-                        </div>
-                        <div class="trans-entry transfer some-space">
-                            <div>Transfer</div>
-                            <div class="description">
-                                <div class="note">bank to Mobile</div>
-                                <div>Account to MPESA</div>
-                            </div>
-                            <div>Kshs 5,000.00</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="trans-head">
-                            <div class="card-date">
-                                <div class="day">19</div>
-                                <div class="week-day">Mon</div>
-                                <div class="d-period">07.2025</div>
-                            </div>             
-                            <div class="income-color">Kshs 8,469.00</div>
-                            <div class="expense-color">Kshs 2,500.00</div>              
-                        </div>
-                        
-                        <div class="trans-entry expense some-space">
-                            <div>Household</div>
-                            <div class="description">
-                                <div class="note">Removed</div>
-                                <div>MPESA</div>
-                            </div>
-                            <div>Kshs 2,500.00</div>
-                        </div>
-                        <div class="trans-entry income some-space">
-                            <div>Allowance</div>
-                            <div class="description">
-                                <div class="note">Gffjj</div>
-                                <div>BankApp</div>
-                            </div>
-                            <div>Kshs 5,600.00</div>
-                        </div>
-                        <div class="trans-entry income some-space">
-                            <div>Salary</div>
-                            <div class="description">
-                                <div class="note">Mpesa</div>
-                                <div>MPESA</div>
-                            </div>
-                            <div>Kshs 500.00</div>
-                        </div>
-                        <div class="trans-entry transfer some-space">
-                            <div>Transfer</div>
-                            <div class="description">
-                                <div class="note">bank to Mobile</div>
-                                <div>Account to MPESA</div>
-                            </div>
-                            <div>Kshs 5,000.00</div>
-                        </div>
-                    </div>                    
-                </div>
-            
-                <div class="content-footer">
-                    <div class="add-transaction">
-                        <button id="add-item" type="button"><i class="fa-solid fa-plus"></i></button>
-                    </div>
-            
-                    <div class="bottom-navigation some-space">
-                        <div class="bottom-view nav-common">
-                            <div class="trans active-item">
-                                <i class="fa-solid fa-book"></i>
-                                <div>Trans.</div>
-                            </div>
-                            <div class="stats">
-                                <i class="fa-solid fa-chart-column"></i>
-                                <div>Stats</div>
-                            </div>
-                            <div class="accounts">
-                                <i class="fa-solid fa-coins"></i>
-                                <div>Accounts</div>
+                            <div class="trans-entry transfer some-space">
+                                <div>Transfer</div>
+                                <div class="description">
+                                    <div class="note">bank to Mobile</div>
+                                    <div>Account to MPESA</div>
+                                </div>
+                                <div>Kshs 5,000.00</div>
                             </div>
                         </div>
-                    </div>
+                         <div class="card">
+                            <div class="trans-head">
+                                <div class="card-date">
+                                    <div class="day">24</div>
+                                    <div class="week-day">Thu</div>
+                                    <div class="d-period">07.2025</div>
+                                </div>
+                                <div class="income-color">Kshs 0.00</div>
+                                <div class="expense-color">Kshs 200.00</div>
+                            </div>
+                            <div class="trans-entry transfer some-space">
+                                <div>Transfer</div>
+                                <div class="description">
+                                    <div class="note">bank to Mobile</div>
+                                    <div>Account to MPESA</div>
+                                </div>
+                                <div>Kshs 5,000.00</div>
+                            </div>
+                            <div class="trans-entry expense some-space">
+                                <div>Social Life</div>
+                                <div class="description">
+                                    <div class="note">Movie</div>
+                                    <div>Accounts</div>
+                                </div>
+                                <div>Kshs 200.00</div>
+                            </div>
+                            <div class="trans-entry income some-space">
+                                <div>Bonus</div>
+                                <div class="description">
+                                    <div class="note">Removed</div>
+                                    <div>Card</div>
+                                </div>
+                                <div>Kshs 2,369.00</div>
+                            </div>
+                        </div>
+                    </div>                   
                 </div>
             </div>
+            <a class="add-transaction" href="#">+</a>
         </div>
     </section>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
