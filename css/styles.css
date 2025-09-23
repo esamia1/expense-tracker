@@ -133,12 +133,33 @@ body {
 
 
 /* Nav Section Styles */
-.nav-section {
+.nav-section {    
     width: 120px;
     height: inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-size: 18px;
+    text-align: center;
+}
+
+.nav-section a {
+    color: var(--inactive-text);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;    
+}
+
+.nav-section a:hover {
+    color: var(--note-text);
+}
+
+.nav-section a i {
+    font-size: 28px;
+}
+
+#trans {
+    color: var(--expense-color);
 }
 
 
@@ -268,11 +289,39 @@ body {
     position: absolute;
     right: 8px;
     bottom: 8px;
-    font-size: 32px;
-    padding: 4px 14px;
+    font-size: 24px;
+    padding: 6px 10px;
     border-radius: 50%;
+    /* opacity: 0.85; */
 }
 
 .add-transaction:hover {
-    box-shadow: 2px 5px 8px var(--inactive-text);
+    box-shadow: 2px 5px 8px var(--inactive-text);    
+    /* opacity: 1; */
 }
+
+
+
+
+/* ###--- ADD TRANSACTIONS PAGE STYLES    ---### */
+/* Top Navigation Styles */
+.back-nav {    
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 7px;    
+}
+
+.back-nav a, .back-nav span {
+    padding: 5px;
+    color: var(--active-text);
+}
+
+
+/* Nav Section Styles */
+#add-expense {
+    color: var(--expense-color);
+}
+
+
+/* Expense Form Section */
