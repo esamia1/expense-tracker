@@ -40,56 +40,62 @@
                 </div>
                 <div class="expense-section">
                     <div class="form-section">
-                        <form action="">
+                        <form action="" method="post">
                             <div class="form-content">
                                 <div class="entry-labels">
                                     <div>
-                                        <label for="">Date</label>
+                                        <label for="date">Date</label>
                                     </div>
                                     <div>
-                                        <label for="">Amount</label>
+                                        <label for="amount">Amount</label>
                                     </div>
                                     <div>
-                                        <label for="">Category</label>
+                                        <label for="category">Category</label>
                                     </div>
                                     <div>
-                                        <label for="">Account</label>
+                                        <label for="account">Account</label>
+                                    </div>
+                                    <div>
+                                        <label for="note">Notes</label>
                                     </div>
                                 </div>
                                 <div class="entry-inputs">
                                     <div>
-                                        <input type="date" name="" id="">
-                                        <input type="time" name="" id="">
+                                        <input type="datetime-local" name="date" id="date">                                 
                                     </div>
                                     <div>
-                                        <input type="number" name="" id="">
+                                        <input type="number" name="amount" id="amount">
                                     </div>
                                     <div>
-                                        <select name="" id="">
+                                        <select name="category" id="category">
                                             <option value="">Select category...</option>
-                                            <option value="">Food</option>
-                                            <option value="">Transport</option>
-                                            <option value="">Apparel</option>
-                                            <option value="">Education</option>
-                                            <option value="">Social Life</option>
-                                            <option value="">Culture</option>
-                                            <option value="">Beauty</option>
-                                            <option value="">Gift</option>
-                                            <option value="">Pets</option>
-                                            <option value="">Household</option>
-                                            <option value="">Health</option>
-                                            <option value="">Other</option>
+                                            <option value="Food">Food</option>
+                                            <option value="Transport">Transport</option>
+                                            <option value="Apparel">Apparel</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Social Life">Social Life</option>
+                                            <option value="Culture">Culture</option>
+                                            <option value="Beauty">Beauty</option>
+                                            <option value="Gift">Gift</option>
+                                            <option value="Pets">Pets</option>
+                                            <option value="Household">Household</option>
+                                            <option value="Health">Health</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                     </div>
                                     <div>
-                                        <select name="" id="">
+                                        <select name="account" id="account">
                                             <option value="">Select account...</option>
-                                            <option value="">Accounts</option>
-                                            <option value="">Cash</option>
-                                            <option value="">MPESA</option>
-                                            <option value="">Card</option>                          
+                                            <option value="Accounts">Accounts</option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="M-PESA">M-PESA</option>
+                                            <option value="Card">Card</option>                          
                                         </select>
                                     </div>
+                                    <div>
+                                        <input type="text">
+                                    </div>
+                                    <input type="hidden" name="trans-expense" value="expense">
                                 </div>
                             </div>
                             <div class="form-submit">
