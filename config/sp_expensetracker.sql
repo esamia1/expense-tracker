@@ -19,8 +19,43 @@ USE `sp_expensetracker`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table ``
+-- Table structure for table `et_transactions`
 --
+
+CREATE TABLE `et_transactions` (
+  `trans_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `accounts` text NOT NULL,
+  `category` text NOT NULL,
+  `amount` int(11) NOT NULL,
+  `trans_type` int(11) NOT NULL,
+  `note` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `et_transactions`
+--
+ALTER TABLE `et_transactions`
+  ADD PRIMARY KEY (`trans_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `et_transactions`
+--
+ALTER TABLE `et_transactions`
+  MODIFY `trans_id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+
 
 
 
