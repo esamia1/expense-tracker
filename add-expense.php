@@ -11,7 +11,7 @@
     $category = $_POST['category'];
     $account = $_POST['account'];
     $note = $_POST['note'];
-    $trans_expense = $_POST['trans-expense'];
+    $trans_expense = strtolower($_POST['trans-expense']);
         
     // Prepare and bind
     $expense_stmt = $conn->prepare("INSERT INTO et_transactions (date, accounts, category, amount, trans_type, note) VALUES (?, ?, ?, ?, ?, ?)");

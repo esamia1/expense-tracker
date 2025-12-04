@@ -1,5 +1,6 @@
-#ignore the prototypy foleder
+#ignore the folders
 /prototypes
+/.vscode
 
 #ignore the add file
 add.html
