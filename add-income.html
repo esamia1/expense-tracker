@@ -20,16 +20,16 @@
                 </div>
                 <div class="back-nav">
                     <a href="./index.html"><i class="fa fa-arrow-left"></i></a>
-                    <span>Expense</span>                    
+                    <span>Income</span>                    
                 </div>
             </div>
             <div class="main-section">
                 <div class="nav-section">
-                    <a id="add-income" href="./add-income.html">
+                    <a id="add-income" href="#">
                         <i class="fa fa-credit-card"></i>
                         <span>Income</span>
                     </a>
-                    <a id="add-expense" href="#">
+                    <a id="add-expense" href="./add-transaction.html">
                         <i class="fa fa-shopping-basket"></i>
                         <span>Expense</span>
                     </a>
@@ -69,18 +69,11 @@
                                     <div>
                                         <select name="category" id="category">
                                             <option value="">Select category...</option>
-                                            <option value="Food">Food</option>
-                                            <option value="Transport">Transport</option>
-                                            <option value="Apparel">Apparel</option>
-                                            <option value="Education">Education</option>
-                                            <option value="Social Life">Social Life</option>
-                                            <option value="Culture">Culture</option>
-                                            <option value="Beauty">Beauty</option>
-                                            <option value="Gift">Gift</option>
-                                            <option value="Pets">Pets</option>
-                                            <option value="Household">Household</option>
-                                            <option value="Health">Health</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Allowance">Allowance</option>
+                                            <option value="Salary">Salary</option>
+                                            <option value="Petty Cash">Petty Cash</option>
+                                            <option value="Bonus">Bonus</option>
+                                            <option value="Other">Other</option>                                 
                                         </select>
                                     </div>
                                     <div>
@@ -95,7 +88,7 @@
                                     <div>
                                         <input id="note" name="note" type="text">
                                     </div>
-                                    <input type="hidden" name="trans-expense" value="expense">
+                                    <input type="hidden" name="trans-expense" value="income">
                                 </div>
                             </div>
                             <div class="form-submit">

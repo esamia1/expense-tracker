@@ -15,12 +15,3 @@ const showTransactions = () => {
 
 //execute reques after page load
 window.onload = (event) => showTransactions();
-
-
-//clear the data after 10s
-/* setTimeout(() => {
-    transDetails.innerHTML = "";
-}, 10000); */
-
-
-

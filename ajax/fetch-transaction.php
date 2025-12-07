@@ -68,5 +68,6 @@
         }
         $html_output .= '</div>';
     }
+    //send response back to client
     echo $html_output;
 ?>

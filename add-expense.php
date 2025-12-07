@@ -31,8 +31,19 @@
     $expense_stmt->close();
     $conn->close();
 
-    // Enter another transaction
-    header("Location: ./add-transaction.html");
-    exit;
+    //redirect according to type of transaction
+    if($trans_expense === "expense"){
+        header("Location: ./add-transaction.html");
+        // Enter another transaction
+        exit;
+    } elseif($trans_expense === "income"){
+        header("Location: ./add-income.html");
+        exit;
+    } else {
+        //change this in future to tansfer on implementation
+        header("Location: ./index.html");
+        exit;
+    }
+
 
 ?>
