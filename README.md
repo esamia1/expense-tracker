@@ -4,7 +4,7 @@ Welcome to Expense Tracker code repository where we use all free and cheap web t
 
 ## About the repository
 
-This repository contains code implementation using vanilla **HTML**, **CSS**, **JS** and **PHP**. It will be added to continuosly to add more features and fucntionality to the app. It's designed to inspire and challenge learning coders to pick what they have and build!
+This repository contains code implementation using vanilla **HTML**, **CSS**, **JS** and **PHP**. It will be added to continuosly to add more features and functionality to the app. It's designed to inspire and challenge learning coders to pick what they have and build!
 
 ## Current functionality implemeted
 
@@ -14,4 +14,4 @@ A list of features added so far:
 
 ## Challenge yourself
 
-**Clone this repository:** `git clone https://github.com/esamia1/expense-tracker.git` and implement features to of your own liking.
+**Clone this repository:** `git clone https://github.com/esamia1/expense-tracker.git` and implement features of your own liking.
