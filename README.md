@@ -8,9 +8,15 @@ This repository contains code implementation using vanilla **HTML**, **CSS**, **
 
 ## Current functionality implemeted
 
-A list of features added so far:
+A list of features added so far():
+`Implemented features are in bold`
+
 1. **Ability to add expenses:** Adding transactions where money is being spent-outflow
 2. **Ability to add income:** Adding transactions where money is being earned-inflow
+3. Ability to transfer of income between two accounts: Simulation of withdrawal from bank to cash
+4. Summarizing transaction per day: Showing total money in and out in a day
+5. Summarizing transactions per month: Showing total money in and out in a month
+6. Dashboard: Summarizing transactions per given date range- current month default
 
 ## Challenge yourself
 
