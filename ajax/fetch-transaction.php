@@ -57,14 +57,26 @@
                                 <div class="expense-color">Kshs 200.00</div>
                             </div>';
         for($trans = 0; $trans < count($formatDetails[$dayList[$day]]); $trans++){
-            $html_output .= '<div class="trans-entry expense some-space">
-                                <div>'.$formatDetails[$dayList[$day]][$trans]["category"].'</div>
-                                <div class="description">
-                                    <div class="note">'.$formatDetails[$dayList[$day]][$trans]["note"].'</div>
-                                    <div>'.$formatDetails[$dayList[$day]][$trans]["accounts"].'</div>
-                                </div>
-                                <div>Kshs '.$formatDetails[$dayList[$day]][$trans]["amount"].'</div>
-                            </div>';                            
+            // check transaction if expense or income
+            if($formatDetails[$dayList[$day]][$trans]["trans"] === "income"){
+                $html_output .= '<div class="trans-entry expense some-space">
+                                    <div>'.$formatDetails[$dayList[$day]][$trans]["category"].'</div>
+                                    <div class="description">
+                                        <div class="note">'.$formatDetails[$dayList[$day]][$trans]["note"].'</div>
+                                        <div>'.$formatDetails[$dayList[$day]][$trans]["accounts"].'</div>
+                                    </div>
+                                    <div class="income-color">Kshs '.$formatDetails[$dayList[$day]][$trans]["amount"].'</div>
+                                </div>';                            
+            } else {
+                $html_output .= '<div class="trans-entry expense some-space">
+                                    <div>'.$formatDetails[$dayList[$day]][$trans]["category"].'</div>
+                                    <div class="description">
+                                        <div class="note">'.$formatDetails[$dayList[$day]][$trans]["note"].'</div>
+                                        <div>'.$formatDetails[$dayList[$day]][$trans]["accounts"].'</div>
+                                    </div>
+                                    <div class="expense-color">Kshs '.$formatDetails[$dayList[$day]][$trans]["amount"].'</div>
+                                </div>';
+            }
         }
         $html_output .= '</div>';
     }
