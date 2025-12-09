@@ -15,7 +15,7 @@ A list of features added so far():
 2. **Ability to add income:** Adding transactions where money is being earned-inflow
 3. Ability to transfer of income between two accounts: Simulation of withdrawal from bank to cash
 4. **Summarizing transaction per day:** Showing total money in and out in a day
-5. Summarizing transactions per month: Showing total money in and out in a month
+5. **Summarizing transactions per month:** Showing total money in and out in a month
 6. Dashboard: Summarizing transactions per given date range- current month default
 
 ## Challenge yourself
