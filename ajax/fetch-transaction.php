@@ -20,7 +20,11 @@
     }
     $conn->close();
 
+    //array to hold fetched values
     $formatDetails = [];
+
+    //hold daily subtotal transactions    
+    $totals = [];
 
     foreach($trans_details as $item){
         //extract full date
@@ -32,19 +36,53 @@
 
         //create new array populating the figures
         if(array_key_exists($fullDate, $formatDetails)){
-            array_push($formatDetails[$fullDate], ["day"=> date("d", strtotime($item["date"])), "week_day"=> date("D", strtotime($item["date"])), "month"=> date("m", strtotime($item["date"])), "year"=> date("Y", strtotime($item["date"])), "accounts"=> $item["accounts"], "category"=> $item["category"], "amount"=> $item["amount"], "trans"=> $item["trans_type"], "note"=> $item["note"]]);
+            array_push($formatDetails[$fullDate], [
+                "day"=> date("d", strtotime($item["date"])), "week_day"=> date("D", strtotime($item["date"])), "month"=> date("m", strtotime($item["date"])), "year"=> date("Y", strtotime($item["date"])), "accounts"=> $item["accounts"], 
+                "category"=> $item["category"], 
+                "amount"=> $item["amount"], 
+                "trans"=> $item["trans_type"], 
+                "note"=> $item["note"]
+            ]);
+            //update income&expense total
+            switch($item["trans_type"]){
+                case "expense":
+                    $totals[$fullDate][1] += $item["amount"];
+                    break;
+                case "income":
+                    $totals[$fullDate][0] += $item["amount"];
+                    break;
+            }
         } else {
             $formatDetails[$fullDate] = [];
-            array_push($formatDetails[$fullDate], ["day"=> date("d", strtotime($item["date"])), "week_day"=> date("D", strtotime($item["date"])), "month"=> date("m", strtotime($item["date"])), "year"=> date("Y", strtotime($item["date"])), "accounts"=> $item["accounts"], "category"=> $item["category"], "amount"=> $item["amount"], "trans"=> $item["trans_type"], "note"=> $item["note"]]);
+            array_push($formatDetails[$fullDate], [
+                "day"=> date("d", strtotime($item["date"])), "week_day"=> date("D", strtotime($item["date"])), "month"=> date("m", strtotime($item["date"])), "year"=> date("Y", strtotime($item["date"])), "accounts"=> $item["accounts"], 
+                "category"=> $item["category"], 
+                "amount"=> $item["amount"], 
+                "trans"=> $item["trans_type"], 
+                "note"=> $item["note"]
+            ]);
+            //update income&expense total
+            $totals[$fullDate] = [0, 0];
+            switch($item["trans_type"]){
+                case "expense":
+                    $totals[$fullDate][1] += $item["amount"];
+                    break;
+                case "income":
+                    $totals[$fullDate][0] += $item["amount"];
+                    break;
+            }
         }
     }
-
-    /*echo "<pre>";
-    print_r($formatDetails);
-    echo "</pre>";*/
+    /*
+    echo "<pre>";
+    print_r($totals);
+    echo "</pre>";
+    */
+    //extract daily summary
+    
 
     //generate html output
-    $dayList = array_keys($formatDetails);
+    $dayList = array_keys($formatDetails);    
     for($day = 0; $day < count($formatDetails); $day++){
         $html_output .= '<div class="card">
                             <div class="trans-head">
@@ -53,8 +91,8 @@
                                     <div class="week-day">'.$formatDetails[$dayList[$day]][0]["week_day"].'</div>
                                     <div class="d-period">'.$formatDetails[$dayList[$day]][0]["month"].'.'.$formatDetails[$dayList[$day]][0]["year"].'</div>
                                 </div>
-                                <div class="income-color">Kshs 0.00</div>
-                                <div class="expense-color">Kshs 200.00</div>
+                                <div class="income-color">Kshs '.$totals[$dayList[$day]][0].'</div>
+                                <div class="expense-color">Kshs '.$totals[$dayList[$day]][1].'</div>
                             </div>';
         for($trans = 0; $trans < count($formatDetails[$dayList[$day]]); $trans++){
             // check transaction if expense or income
